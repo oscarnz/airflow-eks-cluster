@@ -121,7 +121,7 @@ resource "aws_iam_openid_connect_provider" "this" {
   # https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc_verify-thumbprint.html
   # https://github.com/terraform-providers/terraform-provider-tls/issues/52
   thumbprint_list = ["9e99a48a9960b14926bb7f3b02e22da2b0ab7280"]
-  url             = aws_eks_cluster.cluster.identity.0.oidc.0.issuer
+  url             = aws_eks_cluster.test.identity.0.oidc.0.issuer
 }
 
 data "aws_iam_policy_document" "ebs_cni_controller" {
