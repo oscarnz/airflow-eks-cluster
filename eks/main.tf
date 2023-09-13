@@ -163,7 +163,12 @@ resource "aws_iam_role_policy_attachment" "ebs_cni_policy" {
   role       = aws_iam_role.ebs_cni.name
 }
 
+import {
+  to = aws_eks_addon.csi_driver
+  id = "airflow-eks-cluster:csi_driver_testing"
+}
 resource "aws_eks_addon" "csi_driver" {
+  name                     = "csi_driver_testing"
   cluster_name             = aws_eks_cluster.test.name
   addon_name               = "aws-ebs-csi-driver"
   service_account_role_arn = aws_iam_role.ebs_cni.arn
