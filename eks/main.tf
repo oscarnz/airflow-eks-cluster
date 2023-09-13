@@ -155,7 +155,7 @@ resource "aws_iam_role" "ebs_cni" {
   name               = "AmazonEKS_EBS_CSI_DriverRole_Data"
   assume_role_policy = data.aws_iam_policy_document.ebs_cni_controller.json
 
-  tags = module.main.common_tags
+  # tags = module.main.common_tags
 }
 
 resource "aws_iam_role_policy_attachment" "ebs_cni_policy" {
