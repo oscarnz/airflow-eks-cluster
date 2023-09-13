@@ -62,7 +62,7 @@ resource "aws_default_subnet" "subnet3" {
 
 
 resource "aws_eks_cluster" "test" {
-  name     = "test"
+  name     = "airflow-eks-cluster"
   role_arn = aws_iam_role.controlplane.arn
 
   vpc_config {
@@ -126,3 +126,5 @@ resource "aws_acm_certificate" "cert" {
     create_before_destroy = true
   }
 }
+
+# https://github.com/bootlabstech/terraform-aws-fully-loaded-eks-cluster/tree/v1.0.7/modules/kubernetes-addons/airflow
