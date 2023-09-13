@@ -61,7 +61,7 @@ resource "aws_default_subnet" "subnet3" {
 }
 
 
-resource "aws_eks_cluster" "test" {
+resource "aws_eks_cluster" "airflow-eks-cluster" {
   name     = "airflow-eks-cluster"
   role_arn = aws_iam_role.controlplane.arn
 
